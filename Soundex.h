@@ -20,17 +20,17 @@ char getSoundexCode(char c)
     return '0';
 }
 
-int processSoundex(const char *name,int len,int sIndex,char *soundex)
+void processSoundex(const char *name,int len,int *sIndex,char *soundex)
 {
     int i = 1;
-    while (i < len && sIndex < 4) 
+    while (i < len && *sIndex < 4) 
     {
         char code = getSoundexCode(name[i]);
-        soundex[sIndex] = code;
-        sIndex += (code != '0' && code != soundex[sIndex - 1]);
+        soundex[*sIndex] = code;
+        *sIndex += (code != '0' && code != soundex[*sIndex - 1]);
         i++;
     }
-    return sIndex;
+
 
 }
 
@@ -40,7 +40,7 @@ void generateSoundex(const char *name, char *soundex)
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
 
-    sIndex = processSoundex(name,len,sIndex,soundex);
+   processSoundex(name,len,&sIndex,soundex);
     
     while (sIndex < 4) 
     {
