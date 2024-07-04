@@ -25,11 +25,10 @@ int processSoundex(const char *name,int len,int sIndex,char *soundex)
     int i = 1;
     while (i < len && sIndex < 4) 
     {
-        char code = getSoundexCode(name[i++]);
-        if (code != '0' && code != soundex[sIndex - 1]) 
-        {
-            soundex[sIndex++] = code;
-        }
+        char code = getSoundexCode(name[i]);
+        soundex[sIndex] = code;
+        sIndex += (code != '0' && code != soundex[sIndex - 1]);
+        i++;
     }
     return sIndex;
 
