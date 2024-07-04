@@ -12,38 +12,55 @@ char arr_with_ret_6[1] = {'R'};
 
 
 // Test cases for getSoundexCode function
-TEST(SoundexTest, GetSoundexCode)
+TEST(SoundexTest_ret_1, GetSoundexCode)
 {
     for (int i=0;i<4;i++)
     {
         EXPECT_EQ(getSoundexCode(arr_with_ret_1[i]), '1');
     }
+}
 
+TEST(SoundexTest_ret_2, GetSoundexCode)
+{
     for (int i=0;i<8;i++)
     {
         EXPECT_EQ(getSoundexCode(arr_with_ret_2[i]), '2');
     }
+}
 
+TEST(SoundexTest_ret_3, GetSoundexCode)
+{
     for (int i=0;i<2;i++)
     {
         EXPECT_EQ(getSoundexCode(arr_with_ret_3[i]), '3');
     }
+}
 
+TEST(SoundexTest_ret_4, GetSoundexCode)
+{
     for (int i=0;i<1;i++)
     {
         EXPECT_EQ(getSoundexCode(arr_with_ret_4[i]), '4');
     }
+    
+}
 
+TEST(SoundexTest_ret_5, GetSoundexCode)
+{
     for (int i=0;i<2;i++)
     {
         EXPECT_EQ(getSoundexCode(arr_with_ret_5[i]), '5');
     }
+    
+}
 
+TEST(SoundexTest_ret_6, GetSoundexCode)
+{
     for (int i=0;i<1;i++)
     {
         EXPECT_EQ(getSoundexCode(arr_with_ret_6[i]), '6');
     }
-
+    
 }
 
 TEST(SoundexTest_default, GetSoundexCode)
